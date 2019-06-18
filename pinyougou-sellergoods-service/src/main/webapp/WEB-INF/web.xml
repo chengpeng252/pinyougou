@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
-        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
-     <dubbo:protocol name="dubbo" port="20881"></dubbo:protocol>
-	<dubbo:application name="pinyougou-sellergoods-service"/>  
-    <dubbo:registry address="zookeeper://192.168.25.129:2181"/>
-<dubbo:annotation package="com.pinyougou.sellergoods.service.impl" />  
-</beans>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">	
+	<!-- 加载spring容器 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:spring/applicationContext*.xml</param-value>
+	</context-param>
+	<listener>
+	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+</web-app>
