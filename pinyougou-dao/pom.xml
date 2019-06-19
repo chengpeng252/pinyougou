@@ -9,6 +9,12 @@
   <artifactId>pinyougou-dao</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
+  
+  		
+  	<dependency>
+	    <groupId>com.github.pagehelper</groupId>
+	    <artifactId>pagehelper</artifactId>	   
+	</dependency>	
  		<!-- Mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
