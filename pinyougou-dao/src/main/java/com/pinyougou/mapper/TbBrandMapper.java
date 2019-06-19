@@ -15,7 +15,9 @@ public interface TbBrandMapper {
     int insert(TbBrand record);
 
     int insertSelective(TbBrand record);
-
+    
+    List<TbBrand> qryTbBrand(TbBrand tbBrand);
+    
     List<TbBrand> selectByExample(TbBrandExample example);
 
     TbBrand selectByPrimaryKey(Long id);
