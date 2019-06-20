@@ -2,6 +2,9 @@ package com.pinyougou.pojo;
 
 import java.io.Serializable;
 
+import lombok.ToString;
+
+@ToString
 public class TbBrand implements Serializable{
     private Long id;
 

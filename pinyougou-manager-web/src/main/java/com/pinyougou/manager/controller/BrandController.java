@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.pinyougou.pojo.TbBrand;
 import com.pinyougou.pojo.web.PageReq;
+import com.pinyougou.pojo.web.QryBrandForpageRes;
+import com.pinyougou.pojo.web.QryBrandReq;
 import com.pinyougou.sellergoods.service.BrandService;
 
 @RestController
@@ -27,12 +29,11 @@ public class BrandController {
 	
 	
 	@RequestMapping("/search")
-	public List<TbBrand> search(@ModelAttribute("Model") PageReq pageReq,@RequestBody Map<String,String> map ){
-	
-		System.out.println(pageReq);
-		System.out.println(map);
+	public QryBrandForpageRes search(@ModelAttribute("Model") PageReq pageReq,@RequestBody QryBrandReq qryBrandReq ){
 		
-		return brandService.findAll();		
+		QryBrandForpageRes qryTbBrandsForPage = brandService.qryTbBrandsForPage(qryBrandReq, pageReq);
+		
+		return qryTbBrandsForPage;		
 	}
 	
 	
